@@ -21,9 +21,7 @@ async function getContactById(contactId) {
 
 async function removeContact(contactId) {
   const contacts = await listContacts();
-  const newContactsList = contacts.filter(
-    (contact) => contact.id != contactId
-  );
+  const newContactsList = contacts.filter((contact) => contact.id != contactId);
   await fs.writeFile(contactsPath, JSON.stringify(newContactsList));
 }
 
